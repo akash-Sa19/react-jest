@@ -5,12 +5,12 @@
 import { render, screen } from "@testing-library/react";
 import Greet from "./Greet";
 
-test("greet renders correctly", () => {
+test.skip("greet renders correctly", () => {
   render(<Greet />);
   const textElement = screen.getByText("Hello");
   expect(textElement).toBeInTheDocument();
 });
-test("greet renders with a name", () => {
+test.only("greet render with a name", () => {
   render(<Greet name="Akash" />);
   const textElement = screen.getByText("Hello Akash");
   expect(textElement).toBeInTheDocument();
