@@ -3,16 +3,16 @@
  */
 
 import { render, screen } from "@testing-library/react";
-import Greet from "./Greet";
+import Greet from "../components/geet/Greet";
 
 // with describe we can group tests together
-describe.only("reet", () => {
+describe.only("Greet", () => {
   test("renders correctly", () => {
     render(<Greet />);
     const textElement = screen.getByText("Hello");
     expect(textElement).toBeInTheDocument();
   });
-  describe("Neted describe", () => {
+  describe("Nested describe", () => {
     test("render with a name", () => {
       render(<Greet name="Akash" />);
       const textElement = screen.getByText("Hello Akash");
