@@ -5,13 +5,18 @@
 import { render, screen } from "@testing-library/react";
 import Greet from "./Greet";
 
-test.skip("greet renders correctly", () => {
-  render(<Greet />);
-  const textElement = screen.getByText("Hello");
-  expect(textElement).toBeInTheDocument();
-});
-test.only("greet render with a name", () => {
-  render(<Greet name="Akash" />);
-  const textElement = screen.getByText("Hello Akash");
-  expect(textElement).toBeInTheDocument();
+// with describe we can group tests together
+describe.only("Greet", () => {
+  test("renders correctly", () => {
+    render(<Greet />);
+    const textElement = screen.getByText("Hello");
+    expect(textElement).toBeInTheDocument();
+  });
+  describe("Nested describe", () => {
+    test("render with a name", () => {
+      render(<Greet name="Akash" />);
+      const textElement = screen.getByText("Hello Akash");
+      expect(textElement).toBeInTheDocument();
+    });
+  });
 });
