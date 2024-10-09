@@ -8,7 +8,7 @@ import Greet from "./Greet";
 // with describe we can group tests together
 describe.only("Greet", () => {
   // just like skip() method
-  xit("renders correctly", () => {
+  xit("renders corectly", () => {
     render(<Greet />);
     const textElement = screen.getByText("Hello");
     expect(textElement).toBeInTheDocument();
@@ -17,7 +17,7 @@ describe.only("Greet", () => {
     // normal
     // it("render with a name", () => {
     // just like only() method
-    fit("render with a name", () => {
+    fit("render wit a name", () => {
       render(<Greet name="Akash" />);
       const textElement = screen.getByText("Hello Akash");
       expect(textElement).toBeInTheDocument();
